@@ -1,0 +1,46 @@
+{% extends "levels/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+<div style="display: flex; flex-direction: column; align-items: center;" >
+    <div>
+      <h1 style="font-size: 36px; color: #333; text-align: center;">Sixth Level</h1>
+      <h2 style="color: blue;">Chichen Itza - Mexico</h2>
+    </div>
+    <div style="display: flex; align-items: center;">
+        <img src="{% static 'images/ChichenItza-Mexico.jpg' %}" style="height: 400px; width: 55%;">
+        <p style="margin-left: 10px;">Chichen Itza is a world-famous archaeological site in the Yucatan Peninsula of Mexico. It was once a great Mayan city, and today it is a UNESCO World Heritage Site and one of the New Seven Wonders of the World. The most famous structure at Chichen Itza is the pyramid-shaped El Castillo, also known as the Temple of Kukulkan. It was built with such precision that during the spring and fall equinoxes, the shadow of the sun creates the illusion of a snake slithering down the steps. Other notable structures include the Temple of the Warriors, the Great Ball Court, and the Sacred Cenote. Chichen Itza is a must-see destination for anyone interested in ancient history and architecture.</p>    </div>
+  </div>
+<div class="myDiv">
+    <h4>One of the most famous structures in Chichen Itza is the pyramid-shaped El Castillo, also known as the Temple of Kukulcan. How many steps does this pyramid have?</h4>
+</div>
+<form method="POST">
+    {% csrf_token %} 
+    <div class="input-group justify-content-center">
+        <input type="text" class="form-control mr-2" name="level6" placeholder="Enter the Answer" required>
+        <button class="btnend" type="submit" name="clue1">Submit</button>
+    </div>
+</form>
+
+<button id="myButton1">Clue</button>
+    <script>
+      var myButton = document.getElementById("myButton1");
+    
+      myButton.addEventListener("click", function() {
+        
+        var message = document.createElement("div");
+        message.innerHTML = `What is the value of x, where x equals the number of days in a year and the number of degrees in a circle...`;
+        message.style.position = "absolute";
+        message.style.top = myButton.offsetTop + myButton.offsetHeight + 100 + "px";
+        message.style.left = myButton.offsetLeft + 200 + "px";
+        document.body.appendChild(message);
+
+        setTimeout(function() {
+          document.body.removeChild(message);
+        }, 20000); 
+      });
+    </script>
+
+{% endblock content %}

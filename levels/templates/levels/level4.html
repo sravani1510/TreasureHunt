@@ -1,0 +1,29 @@
+{% extends "levels/base.html" %}
+{% block content %}
+
+
+<div style="display: flex; flex-direction: column; align-items: center;" >
+  <div style="margin-top: 10px;">
+    <h1 style="font-size: 36px; color: #333; text-align: center;">Fourth Level</h1>
+    <h4 style="color: blue;">Think you know your colors? Then check your accuracy here.....</h4>
+  </div>
+</div>
+    <p>Type in the color of the words,not the word displayed...... Enter the color of the word and then click on submit. You have a total of 10 chances out of which 6 need to be correct to proceed to further 4 more wonders of levels</p>
+  <form method="post">
+    {% csrf_token %}
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-4">
+        <div class="card p-4 text-center" style="background: #75d4ab;">
+          <h2 class="card-title" style="color: {{ color_code }}" >{{ color_name }}</h2>
+          <input type="text" class="form-control my-3" name="level4" autofocus>
+          <button type="submit" class="btn btn-primary btn-block">Submit</button>
+          <p class="mt-4">Score: {{ score }}</p>
+          <p class="mt-4">Score: {{ score }} | Chances remaining: {{ num_chances }}</p>
+        </div>        
+      </div>
+    </div>
+  </form>
+</div>
+
+
+{% endblock content %}

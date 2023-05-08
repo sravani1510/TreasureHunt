@@ -1,0 +1,64 @@
+{% extends "levels/base.html" %}
+{% load static %}
+{% block content %}
+<style>
+  body {
+    background-image: url("{% static 'images/th2.jpg' %}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    margin-top: 70px;
+  }
+
+  .box {
+    background-color: rgba(250, 212, 136, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    color: rgb(16, 1, 1);
+  }
+
+  #text {
+    display: inline-block;
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+</style>
+
+<div class="container">
+  <div class="box">
+    <div id="text"></div>
+    <h1>Treasure Hunt List</h1>
+    <table style="width:100%; border: 2px solid black;">
+      <thead style="width:100%; border: 2px solid black;">
+        <tr style="border: 2px solid black;">
+          <th style="border: 2px solid black;">User</th>
+          <th style="border: 2px solid black;">Level</th>
+          <th style="border: 2px solid black;">Answer</th>
+          <th style="border: 2px solid black;">Score</th>
+        </tr>
+      </thead>
+      <tbody style="width:100%; border: 2px solid black;">
+        {% for treasurehunt in treasurehunts %}
+        <tr style="border: 2px solid black;">
+          <td style="border: 2px solid black;">{{ treasurehunt.user.username }}</td>
+          <td style="border: 2px solid black;">{{ treasurehunt.level }}</td>
+          <td style="border: 2px solid black;">{{ treasurehunt.answer }}</td>
+          <td style="border: 2px solid black;">{{ treasurehunt.score }} / {{ treasurehunt.totscore }} </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock content%}

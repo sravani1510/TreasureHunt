@@ -1,0 +1,58 @@
+{% extends "levels/base.html" %}
+{% load static %}
+{% block content %}
+<style>
+    body {
+        background-image: url("{% static 'images/homebg.jpg' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        margin-top: 70px;
+    }
+    .box {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    h1 {
+        color: rgb(16, 1, 1);
+    }
+    #text {
+        display: inline-block;
+    }
+</style>
+<div class="container">
+    <div class="box">
+        <h1>Helloo Friend!!</h1>
+        <div id="text"></div>
+        <p>Register if you are new, login if you already have an account</p>
+        <center>
+            <a href="{% url 'register' %}">
+                <button class="btnend" type="submit" name="register">register</button>
+            </a>
+            <a href="{% url 'login' %}">
+                <button class="btnend" type="submit" name="login">Login</button>
+            </a>
+        </center>
+    </div>
+</div>
+<script>
+    var text = `You are an adventurer and explorer, known for your daring expeditions to the far reaches of the world. One day, you receive a mysterious letter in the mail, with no return address or signature. The letter reads\:
+    \"Dear adventurer, I have heard of your legendary exploits, and I believe you are just the person I need.
+    I have a proposition for you, but I must be discreet. Meet me by completing the level starting from the first clue by clicking on login to complete one adventure. 
+    Come alone, and bring your wits and courage with you.
+    Yours truly,A fellow seeker of treasure\"`;
+    var i = 0;
+    var speed = 50;
+    function typeWriter() {
+        if (i < text.length) {
+            document.getElementById("text").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+    typeWriter();
+</script>
+{% endblock content %}

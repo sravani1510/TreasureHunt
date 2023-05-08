@@ -1,0 +1,46 @@
+{% extends "levels/base.html" %}
+{% load static %}
+{% block content %}
+
+<div style="display: flex; flex-direction: column; align-items: center;" >
+    <div>
+      <h1 style="font-size: 36px; color: #333; text-align: center;">Seventh Level</h1>
+      <h2 style="color: blue;">Colosseum - Italy</h2>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <img src="{% static 'images/Colosseum-Italy.jpg' %}" style="height: 300px; width: 50%;">
+        <p style="margin-top: 10px;">The Colosseum, located in the center of Rome, Italy, is an ancient amphitheater and an impressive feat of engineering and architecture. The construction of this grand structure began in 72 AD and was completed in 80 AD, using various materials including travertine limestone, a sedimentary rock that was quarried from nearby Tivoli. The use of travertine limestone not only added to the durability of the Colosseum but also gave the structure a distinct and beautiful appearance.</p>
+        <p>The Colosseum was used for various events such as gladiator battles, animal hunts, and public executions. It could accommodate up to 80,000 spectators, making it one of the largest amphitheaters of its time. Despite facing damage and restoration over the centuries, including earthquakes, fires, and looting, the Colosseum still stands today as a masterpiece of Roman architecture and engineering.</p>
+        <p>Considered as one of the most iconic symbols of Rome, the Colosseum attracts millions of tourists every year, making it one of the most popular landmarks in Italy. Its significance in history and architecture cannot be denied, and it serves as a testament to the ingenuity and craftsmanship of the ancient Romans.</p>
+    </div>
+    
+<div class="myDiv">
+    <h4>The Colosseum in Rome was used for a variety of events, including gladiatorial contests and public spectacles. What was one of the main materials used in the construction of the Colosseum?</h4>
+</div>
+<form method="POST">
+    {% csrf_token %} 
+    <div class="input-group justify-content-center">
+        <input type="text" class="form-control mr-2" name="level7" placeholder="Enter the Answer" required>
+        <button class="btnend" type="submit" name="clue1">Submit</button>
+    </div>
+</form>
+
+<button id="myButton1">Clue</button>
+    <script>
+      var myButton = document.getElementById("myButton1");
+    
+      myButton.addEventListener("click", function() {
+        
+        var message = document.createElement("div");
+        message.innerHTML = `Answer is in the above information itself.. Read it carefully friend`;
+        message.style.position = "absolute";
+        message.style.top = myButton.offsetTop + myButton.offsetHeight + 100 + "px";
+        message.style.left = myButton.offsetLeft + 200 + "px";
+        document.body.appendChild(message);
+        setTimeout(function() {
+          document.body.removeChild(message);
+        }, 20000); 
+      });
+    </script>
+
+{% endblock content %}

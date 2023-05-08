@@ -1,0 +1,46 @@
+{% extends "levels/base.html" %}
+{% load static %}
+{% block content %}
+<style>
+  body {
+    background-image: url("{% static 'images/th4.jpg' %}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    margin-top: 70px;
+  }
+
+  .box {
+    background-color: rgba(119, 115, 6, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    color: rgb(16, 1, 1);
+  }
+
+  #text {
+    display: inline-block;
+  }
+</style>
+
+
+<!-- <img src="{% static 'images/th4.jpg' %}" style="height: 330px; width: 100%;"> -->
+
+
+<div class="container">
+  <div class="box">
+      <h1 style="color: rgb(241, 214, 214);">Yayyyy!</h1>
+      <div id="text"></div>
+      <h2 style="color: rgb(253, 221, 221);">You travelled all the seven wonders of the world and solved all the levels!! Congratulations my dear friend..
+      </h2>
+      <center>
+        <p style="color: rgb(236, 204, 204);">Click on Log Out</p>
+        <button><a href="{% url 'logout' %}">Logout</a></button>
+      </center>
+  </div>
+</div>
+{% endblock content %}

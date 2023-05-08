@@ -1,0 +1,57 @@
+{% extends "levels/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+<div style="display: flex; flex-direction: column; align-items: center;" >
+    <div style="margin-top: 10px;">
+      <h1 style="font-size: 36px; color: #333; text-align: center;">Third Level</h1>
+      <h2 style="color: blue;">Christ the Redeemer - Brazil</h2>
+    </div>
+    <div style="display: flex; align-items: center; margin-top: 20px;">
+        <img src="{% static 'images/christ.jpg' %}" style="height: 330px; width: 50%;">
+        <p style="margin-left: 10px;">Christ the Redeemer is an iconic statue of Jesus Christ located in Rio de Janeiro, Brazil. The statue is 30 meters tall, including its pedestal, and weighs 635 metric tons. It is made of reinforced concrete and soapstone, and was constructed between 1922 and 1931. The statue was built to symbolize the country's Christian faith and has become an important cultural landmark for Brazil. Christ the Redeemer stands atop the Corcovado Mountain, offering breathtaking views of the city and the surrounding natural beauty. It is a popular tourist destination, attracting millions of visitors every year, and is widely recognized as one of the most impressive statues in the world.</p>
+    </div>
+  </div>
+<div class="myDiv">
+    <h4>The statue of Christ the Redeemer is one of the largest Art Deco statues in the world. Over how many people were involved in its construction?</h4>
+</div>
+<form method="POST">
+    {% csrf_token %} 
+    <div class="input-group justify-content-center">
+        <input type="text" class="form-control mr-2" name="level3" placeholder="Enter the Answer" required>
+        <button class="btnend" type="submit" name="clue1">Submit</button>
+    </div>
+</form>
+
+<button id="myButton1">Clue</button>
+    <script>
+      var myButton = document.getElementById("myButton1");
+    
+      myButton.addEventListener("click", function() {
+        var image = document.createElement("img");
+        image.src = "{% static 'images/level3.png' %}";
+        image.style.position = "absolute";
+        image.style.top = myButton.offsetTop + myButton.offsetHeight + 80 + "px";
+        image.style.left = myButton.offsetLeft + 200 + "px";
+        image.width = "200";
+        image.height = "150";
+        document.body.appendChild(image);
+        
+        var message = document.createElement("div");
+        message.innerHTML = `Multiple the obtained answer with 24 and it is the answer`;
+        message.style.position = "absolute";
+        message.style.top = myButton.offsetTop + myButton.offsetHeight + 250 + "px";
+        message.style.left = myButton.offsetLeft + 200 + "px";
+        document.body.appendChild(message);
+
+
+        setTimeout(function() {
+          document.body.removeChild(image);
+          document.body.removeChild(message);
+        }, 20000); 
+      });
+    </script>
+
+{% endblock content %}

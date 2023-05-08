@@ -1,0 +1,29 @@
+{% extends "levels/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+<div style="display: flex; flex-direction: column; align-items: center;" >
+    <div style="margin-top: 10px;">
+      <h1 style="font-size: 36px; color: #333; text-align: center;">Fifth Level</h1>
+      <h2 style="color: blue;">Machu Picchu - Peru</h2>
+    </div>
+    <div style="display: flex; align-items: center; margin-top: 20px;">
+        <p style="margin-left: 10px;">Machu Picchu is an ancient Inca city located high in the Andes Mountains of Peru. Built in the 15th century, it was abandoned during the Spanish conquest and rediscovered in 1911 by Hiram Bingham. Today, it is a UNESCO World Heritage Site and one of the most visited tourist attractions in South America. The site consists of impressive architectural structures, including terraces, temples, and homes, all built with intricate stonework without the use of mortar. The location of Machu Picchu on a high ridge overlooking the Urubamba River adds to its grandeur and mystique, making it an awe-inspiring destination for travelers and history enthusiasts.</p>
+        <img src="{% static 'images/Machu-Picchu-Peru.jpg' %}" style="height: 330px; width: 50%;">
+    </div>
+  </div>
+<div class="myDiv">
+    <h4>The name "Machu Picchu" means "Old Peak" in which language?</h4>
+</div>
+<form method="POST">
+    {% csrf_token %} 
+    <div class="input-group justify-content-center">
+        <input type="text" class="form-control mr-2" name="level5" placeholder="Enter the Answer" required>
+        <button class="btnend" type="submit" name="clue1">Submit</button>
+    </div>
+</form>
+<a href="{% url 'level5a' %}">Clue</a>
+
+{% endblock content %}

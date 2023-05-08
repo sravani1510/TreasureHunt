@@ -1,0 +1,68 @@
+{% extends "levels/base.html" %}
+{% load static %}
+{% block content %}
+
+
+<div style="display: flex; flex-direction: column; align-items: center;" >
+    <div style="margin-top: 10px;">
+      <h1 style="font-size: 36px; color: #333; text-align: center;">Second Level</h1>
+      <h2 style="color: blue;">Petra - Jordan</h2>
+    </div>
+    <div style="display: flex; align-items: center; margin-top: 20px;">
+      <p style="margin-left: 10px;">Petra is an ancient city located in the southwestern region of Jordan, carved into sandstone cliffs that glow pink and red in the light of the sun. It is considered one of the most significant archaeological sites in the world, dating back to the 4th century BC. The city was the capital of the Nabataean Kingdom and was an important center for trade and commerce. Petra is a testament to the creativity and engineering prowess of ancient civilizations, and is a must-see destination for history buffs and adventurers alike.</p>
+      <img src="{% static 'images/petra-jordan.jpg' %}" style="height: 300px; width: 50%;">
+    </div>
+  </div>
+  <div class="myDiv">
+    <h4>What is the nickname of Petra, a historical and archaeological city in Jordan, due to the color of its sandstone cliffs?</h4>
+  </div>
+  
+<div class="button-container">
+    <form method="POST">
+        {% csrf_token %} 
+        <div class="input-group justify-content-center">
+            <input type="text" class="form-control mr-2" name="level2" placeholder="Enter the Answer" required>
+            <button class="btnend" type="submit" name="clue1">Submit</button>
+        </div>
+    </form>
+
+<button id="myButton1">clue-1</button>
+    <script>
+      var myButton = document.getElementById("myButton1");
+    
+      myButton.addEventListener("click", function() {
+        var image = document.createElement("img");
+        image.src = "{% static 'images/petraclue1.jpg' %}";
+        image.style.position = "absolute";
+        image.style.top = myButton.offsetTop + myButton.offsetHeight + 80 + "px";
+        image.style.left = myButton.offsetLeft + 200 + "px";
+        image.width = "200";
+        image.height = "150";
+        document.body.appendChild(image);
+    
+        setTimeout(function() {
+          document.body.removeChild(image);
+        }, 10000); // Remove image after 10 seconds
+      });
+    </script>
+
+<button id="myButton2">Clue-2</button>
+
+</div>
+<script>
+  var myButton = document.getElementById("myButton2");
+
+  myButton.addEventListener("click", function() {
+    var message = document.createElement("div");
+    message.innerHTML = `It is named as the "colour of the clue1 petra image" + "city" `;
+    message.style.position = "absolute";
+    message.style.top = myButton.offsetTop + myButton.offsetHeight + 250 + "px";
+    message.style.left = myButton.offsetLeft + 200 + "px";
+    document.body.appendChild(message);
+
+    setTimeout(function() {
+      document.body.removeChild(message);
+    }, 10000); 
+  });
+</script>
+{% endblock content %}

@@ -1,0 +1,59 @@
+{% extends "levels/base.html" %}
+{% load static %}
+{% block content %}
+
+<div style="display: flex; flex-direction: column; align-items: center;" >
+    <div>
+      <h1 style="font-size: 36px; color: #333; text-align: center;">Eigth Level</h1>
+      <h2 style="color: blue;">Chichen Itza - Mexico</h2>
+    </div>
+    <div style="display: flex; align-items: center;">
+        <p style="margin-left: 10px;">The Taj Mahal is a stunning mausoleum located in Agra, India. It was built by the Mughal Emperor Shah Jahan in memory of his beloved wife Mumtaz Mahal. The construction of the Taj Mahal began in 1632 and was completed in 1653, employing over 20,000 workers. The main structure is made of white marble, which was brought from Rajasthan and other parts of India. The intricate carvings and designs on the walls and dome of the Taj Mahal are a testament to the Mughal's exceptional craftsmanship. The Taj Mahal has become an iconic symbol of India and is recognized as one of the Seven Wonders of the World.</p>
+        <img src="{% static 'images/taj-mahal.jpg' %}" style="height: 400px; width: 55%;">
+    </div>
+  </div>
+<div class="myDiv">
+    <h4>What is the name of the river on which the Taj Mahal is located?</h4>
+</div>
+<form method="POST">
+    {% csrf_token %} 
+    <div class="input-group justify-content-center">
+        <input type="text" class="form-control mr-2" name="level8" placeholder="Enter the Answer" required>
+        <button class="btnend" type="submit" name="clue1">Submit</button>
+    </div>
+</form>
+
+<button id="myButton1">Clue</button>
+    <script>
+      var myButton = document.getElementById("myButton1");
+    
+      myButton.addEventListener("click", function() {
+        
+        var message = document.createElement("div");
+        message.innerHTML = `I flow through the heart of Delhi,
+            My waters are both holy and filthy,
+            I am a tributary of the mighty Ganges,
+            And I am one of India's sacred ranges,
+            What am I?`;
+        message.style.position = "absolute";
+        message.style.top = myButton.offsetTop + myButton.offsetHeight + 100 + "px";
+        message.style.left = myButton.offsetLeft + 200 + "px";
+        document.body.appendChild(message);
+
+        var image = document.createElement("img");
+        image.src = "{% static 'images/tajmahal.jpg' %}";
+        image.style.position = "absolute";
+        image.style.top = myButton.offsetTop + myButton.offsetHeight + 125 + "px";
+        image.style.left = myButton.offsetLeft + 200 + "px";
+        image.width = "200";
+        image.height = "200";
+        document.body.appendChild(image);
+
+        setTimeout(function() {
+          document.body.removeChild(message);
+          document.body.removeChild(image);
+        }, 20000); 
+      });
+    </script>
+
+{% endblock content %}

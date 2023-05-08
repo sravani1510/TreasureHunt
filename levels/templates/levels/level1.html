@@ -1,0 +1,63 @@
+{% extends "levels/base.html" %}
+{% load static %}
+<style>
+  .button-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  button {
+    margin-bottom: 10px;
+  }
+</style>
+
+{% block content %}
+
+<!-- <div class="container" style="background-image: url({% static 'images/final.jpg' %}); background-repeat: no-repeat;background-size: cover; background-position : center top 70px;"> -->
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+  <div style="margin-top: 10px;">
+    <h1 style="font-size: 36px; color: #333; text-align: center;">First Level</h1>
+    <h2 style="color: blue;">The Great Wall of China Beijing</h2>
+  </div>
+  <div style="display: flex; align-items: center; margin-top: 20px;">
+    <img src="{% static 'images/Great-Wall-of-China-Beijing.jpg' %}" style="height: 300px; width: 100%;">
+    <p style="margin-left: 20px;">Built over centuries by different Chinese dynasties, the Great Wall of China is a
+      monumental feat of engineering and one of the largest man-made structures in the world. It stretches across the
+      northern borders of China, consisting of various sections that were built starting in the 7th century BC.</p>
+  </div>
+</div>
+<div class="myDiv">
+  <h4>What is the total length of the Great Wall of China that stretches across China's northern terrain?</h4>
+</div>
+
+<div class="button-container">
+  <form method="POST">
+    {% csrf_token %}
+    <div class="input-group justify-content-center">
+      <input type="text" class="form-control mr-2" name="level1" placeholder="Enter the Answer" required><br /><br />
+      <button class="btnend" type="submit" name="clue1">Submit</button><br /><br />
+    </div>
+  </form>
+
+  <button id="myButton">Clue</button>
+
+</div>
+<script>
+  var myButton = document.getElementById("myButton");
+
+  myButton.addEventListener("click", function () {
+    var message = document.createElement("div");
+    message.innerHTML = `The number of straight line in the word ("MATH"+1)*100 is the solution for it`;
+    message.style.position = "absolute";
+    message.style.top = myButton.offsetTop + myButton.offsetHeight + 80 + "px";
+    message.style.left = myButton.offsetLeft + 200 + "px";
+    document.body.appendChild(message);
+
+    setTimeout(function () {
+      document.body.removeChild(message);
+    }, 10000);
+  });
+</script>
+<!-- </div> -->
+{% endblock content %}

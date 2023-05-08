@@ -1,0 +1,43 @@
+{% extends "levels/base.html" %}
+{% load static %}
+{% block content %}
+<style>
+    body {
+        background-image: url("{% static 'images/about.jpg' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        margin-top: 70px;
+    }
+
+    .box {
+        background-color: rgba(245, 192, 111, 0.8);
+        padding: 20px;
+        border-radius: 20px;
+        max-width: 900px;
+        margin-right: auto;
+        margin-left: 42%;
+    }
+
+    h1 {
+        color: rgb(16, 1, 1);
+    }
+    #text {
+        display: inline-block;
+    }
+</style>
+<div class="container">
+    <div class="box " >
+        <h2>About this Game</h2>
+        <div id="text">
+            <p>This is a treasure hunt game based on the theme of the <b>Seven Wonders of the World </b>can be a fun and
+                challenging activity that requires a range of soft skills to solve. The game can be designed to
+                incorporate clues and challenges related to each wonder, requiring participants to use problem-solving,
+                communication, and critical thinking skills to progress. </p>
+            <p>There are a total of 8 levels of which 7 levels are the questions related to the Seven wonders and to have
+                some fun, one level is added extra in the middle</p>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
