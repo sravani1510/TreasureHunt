@@ -1,13 +1,13 @@
 # The 7 Wonders Treasure Hunt:
 
-This is an interactive puzzle designed to assess the soft skills of a person. Questions in this treasure hunt game are related to 7 wonders of the world. Though the person is not aware of the answer by seeing the question user will be having clues at each level and based on their soft skills such as eye detail, logical thinking, understanding, problem-solving, etc the user can solve the answers to the questions present in each level. 
+This is an interactive puzzle designed to assess the soft skills of a person. Questions in this treasure hunt game are related to 7 wonders of the world as the central theme is <b>The Seven Wonders of the World</b>. Though the user is not aware of the answer by seeing the question user will be having clues at each level and based on their soft skills such as eye detail, logical thinking, understanding, problem-solving, etc the user can solve the answers to the questions present in each level. 
 
 # Website
 users can click on this link and play the game
 ## http://elitmusproj.pythonanywhere.com/
 
 #### User login
-User can signup with the help of their email id and have fun playing the game
+User can signup with the help of their email id and have fun playing the game 
 
 #### Admin login
 username: admin<br>
@@ -19,6 +19,7 @@ The goal of the game is to solve all the levels and pass all the seven wonders. 
 The game ends when user reach a dead end. At the final step, the score will be shown to you. In any step, if you reach a dead end, you will be redirected to the starting page.
 
 ## Soft Skills to be assessed:
+Based on user's ability to solve at each level, their various soft skills can be assessed. Some of them are 
 1. Problem-Solving - The game requires players to solve puzzles and find ways to complete the game, which can help develop their problem-solving skills. By figuring out the best way to navigate through the jungle and find solutions, players can enhance their critical thinking skills. 
 2. Eye for detail - Players need to pay close attention to the details in the game to complete successfully.
 3. logical thinking - The players should have the ability to reason, analyze, and make decisions based on facts, evidence, and sound reasoning.
@@ -39,13 +40,11 @@ Here env is the name of the virtual environment and it can be any name of our in
 whenever you want to go to the created environment you can easily go by using the below command
 workon "virtual environment name"<br>
 ### `workon env`
-
 check if the system has django installed or not, if django is not present install django in the virtual environment where so that django of current version will be installed in that environment and when you want to do another project of different djnago version you can do that in another environment and that is the use of creating virtual environments<br>
 to check<br>
 ### `python -m django --version`<br>
 to install django<br>
 ### `pip install django`<br>
-
 Create a new folder to store the project <br>
 mkdir "project name"<br>
 ### `mkdir puzzle`<br>
@@ -55,8 +54,11 @@ To set up the project simply download the files from gitHub. After downloading t
 ### `python manage.py runserver`<br>
 
 ## Features List
+Anyone with an email address can create an Id and password to participate in the game<br>
 8 levels along with clues for each level<br>
 3 deadends (level 3,4 and 7 are dead ends)<br>
 Minimum 1 solution<br>
 All the progress/user data (with their answers and score they got out of total) is displayed as a table<br>
+On refreshing, from either browser or website, the puzzle will restart from that level<br>
+A dashboard for the admin on the admin side where user can see who all has played
 
