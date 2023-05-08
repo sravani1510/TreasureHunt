@@ -2,6 +2,17 @@
 
 This is an interactive puzzle designed to assess the soft skills of a person. Questions in this treasure hunt game are related to 7 wonders of the world. Though the person is not aware of the answer by seeing the question user will be having clues at each level and based on their soft skills such as eye detail, logical thinking, understanding, problem-solving, etc the user can solve the answers to the questions present in each level. 
 
+# Website
+users can click on this link and play the game
+## http://elitmusproj.pythonanywhere.com/
+
+#### User login
+User can signup with the help of their email id and have fun playing the game
+
+#### Admin login
+username: admin<br>
+password: admin
+
 ## How to play
 To start the game, you need to sign in with your email account. Firstly, user will get a letter saying to complete all levels to meet another treasurer friend. Then, user will have to solve the riddles and get to the final/result page successfully.<br>
 The goal of the game is to solve all the levels and pass all the seven wonders. At certain levels, you have to solve the riddle in the given chances else if you choose the wrong option and if no chances are left, the game will be over and user need to restart the game. User can use hints/clues to answer the riddles. You can use the clue button to get the clue for the riddle. At the end of the game, user will be meeting the friend finally from whom user received the letter<br>
